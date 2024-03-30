@@ -7,13 +7,11 @@ import { PartnersListComponent } from 'src/app/components/partners-list/partners
 
 @NgModule({
   declarations: [
-    ListComponent,
-    PartnersListComponent
+    ListComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
-    CommonModule
   ]
 })
 export class ListModule { }

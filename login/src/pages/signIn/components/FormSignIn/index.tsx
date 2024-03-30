@@ -3,16 +3,26 @@ import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie';
 import * as S from './styles';
 import logoTeddy from '../../../../assets/logo-preto.webp';
+
 export const Login = () => {
 
     const [cookies, setCookie, removeCookie] = useCookies(['userEmail', 'userPassword']);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [emailError] = useState('')
-    const [passwordError] = useState('')
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
     const [rememberUser, setRememberUser] = useState(false)
 
+    const validateLogin = (): boolean =>{
+        setEmailError(!email ? "É obrigatório informar o e-mail!" : "")
+        setPasswordError(!password ? "É obrigatório informar a senha!" : "")
+
+        return email.length > 0 && password.length > 0
+    }
+
     const onButtonClick = () => {
+        if(!validateLogin()) return;
+
         if (rememberUser){
             setCookie('userEmail', email, { path: '/' });
             setCookie('userPassword', password, { path: '/' });
@@ -30,9 +40,7 @@ export const Login = () => {
                 setEmail(cookies.userEmail);
                 setRememberUser(true);
             }
-                
-          }
-          
+        }
         checkCookie();
       },[cookies.userEmail]);
 
@@ -70,7 +78,6 @@ export const Login = () => {
                     type='checkbox'
                 />
                 <label htmlFor="rememberUser">Manter conectado</label>
-                <S.ErrorLabel>{passwordError}</S.ErrorLabel>
             </S.InputCheckBoxContainer>
             <br />
 

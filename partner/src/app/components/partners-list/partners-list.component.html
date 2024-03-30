@@ -1,9 +1,8 @@
 <mat-list>
   <div mat-subheader>Partners</div>
-  <div *ngFor="let partner of partners" >
+  <div *ngFor="let partner of partners">
     <mat-list-item>
       <div matListItemTitle>{{partner.name}}</div>
-      <div matListItemLine>{{partner.createdAt | date}}</div>
     </mat-list-item>
   </div>
 </mat-list>
