@@ -1,0 +1,32 @@
+<div>
+<mat-toolbar>
+  <button mat-icon-button [matMenuTriggerFor]="menu" >
+    <mat-icon >more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openPartners()">
+      <mat-icon>groups</mat-icon>
+      <span>Parceiros</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>domain</mat-icon>
+      <span>Companhias</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>info</mat-icon>
+      <span>Sobre</span>
+    </button>
+  </mat-menu>
+  <img src="./../assets//cropped-icon-laranja-32x32.webp" alt="Logo">
+  <span class="app-name">Teddy Open Finance</span>
+  <span class="spacer"></span>
+  <span class="user-name">{{this.userEmail}}</span>
+  <button class="btn-log-out" mat-icon-button aria-label="LogOut" (click)="onExit()">
+    <mat-icon class="log-out">exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+
+<iframe *ngIf="this.navigate" frameBorder="0" [src]="this.url"></iframe>
+</div>
