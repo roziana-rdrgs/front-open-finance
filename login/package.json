@@ -10,10 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^5.15.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-cookie": "^7.1.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.3",
+    "styled-bootstrap-grid": "^3.1.2",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
