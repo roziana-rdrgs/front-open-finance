@@ -1,5 +1,5 @@
 
-# Teddy Oppen Finance
+# Teddy Open Finance
 
 Preparar um readme.md no repo para que qualquer desenvolvedor consiga subir o projeto e ficando claro que pode usar um módulo específico com sua tecnologia.
 ## mf-teddy-open-finance-login ![Static Badge](https://img.shields.io/badge/react-js?style=for-the-badge&logoColor=blue&color=blue)
@@ -65,7 +65,8 @@ Módulo responsável pelas funcionalidades referentes as companhias como listage
 | mf-teddy-open-finance-partner  | deploy                                         | 5           | to-do  |
 | mf-teddy-open-finance-home     | deploy                                         | 5           | to-do  |
 | mf-teddy-open-finance-home     | deploy                                         | 5           | to-do  |
-
+| -                              | separar repositórios                           | 3           | to-do  |
+| mf-teddy-open-finance-partner  | componentização                                | 8           | to-do  |
 
 ## Deploy
 
