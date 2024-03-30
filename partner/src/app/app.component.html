@@ -1,0 +1,14 @@
+<div>
+
+<mat-toolbar>
+  <img src="./../assets//cropped-icon-laranja-32x32.webp" alt="Logo">
+  <span class="app-name">Teddy Open Finance</span>
+  <span class="spacer"></span>
+  <span class="user-name">{{this.userEmail}}</span>
+  <button class="btn-log-out" mat-icon-button aria-label="LogOut" (click)="onExit()">
+    <mat-icon class="log-out">exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+</div>
