@@ -86,6 +86,25 @@ export const InputBox = styled.input `
   }
 `;
 
+export const InputCheckBoxContainer = styled.div `
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
+export const InputCheckBox = styled.input `
+  height: 20px;
+  width: auto;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid ${common.colors.orange};
+  padding-left: 15px;
+  &:focus {
+    outline: none;
+  }
+`;
+
 export const Button = styled.input `
   height: 48px;
   width: 320px;
