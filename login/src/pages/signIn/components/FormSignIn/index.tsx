@@ -32,6 +32,8 @@ export const Login = () => {
 
             localStorage.setItem('userEmail', email);
         }
+
+        window.location.assign('http://localhost:4200/');
     }
 
     useEffect(() => {
@@ -82,7 +84,7 @@ export const Login = () => {
             <br />
 
             <S.ButtonContainer>
-                <S.Button  type='button' value="Entrar" onClick={onButtonClick} title='Login' />
+                <S.Button type='button' value="Entrar" onClick={onButtonClick} title='Login' />
             </S.ButtonContainer>
         </S.MainContainer>
   )

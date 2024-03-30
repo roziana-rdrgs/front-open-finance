@@ -1,32 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { AppModule } from 'src/app/app.module';
-import { PartnersListComponent } from 'src/app/components/partners-list/partners-list.component';
-import { IPartner } from 'src/app/models/partner';
+
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Partner } from 'src/app/models/partner';
 import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  standalone: true,
-  imports: [
-    AppModule
-  ]
 })
-export class ListComponent implements OnInit{
+export class ListComponent implements AfterViewInit{
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  public partners: Partner[] = [];
+  displayedColumns: string[] = ['id', 'name', 'description', 'clients', 'projects' ];
+  dataSource = new MatTableDataSource<Partner>(this.partners);
 
-  public partners: IPartner[] = [];
   constructor(
     private partnerService: PartnerService
   ){
 
   }
-  ngOnInit(): void {
+
+  async ngAfterViewInit() {
     this.partnerService.getAll().subscribe(
       data => {
         this.partners = data;
+        this.dataSource.data = this.partners;
       }
-    )
+    );
+    this.dataSource.paginator = this.paginator;
+    console.log(this.partners)
   }
+
 
 }

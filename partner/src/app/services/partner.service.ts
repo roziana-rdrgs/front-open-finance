@@ -1,4 +1,4 @@
-import { IPartner } from './../models/partner';
+import { Partner } from './../models/partner';
 import { HttpClient } from '@angular/common/http';
 import { AppConfig } from './../app.config';
 import { Injectable } from "@angular/core";
@@ -13,29 +13,30 @@ export class PartnerService {
   ) {
   }
 
-  getAll(): Observable<IPartner[]> {
+  getAll(): Observable<Partner[]> {
     const url = `${this.config.partnerApiBaseUrl}`;
-    return this.http.get<IPartner[]>(url);
+    console.log(url);
+    return this.http.get<Partner[]>(url);
   }
 
-  getById(id: number): Observable<IPartner> {
+  getById(id: number): Observable<Partner> {
     const url = `${this.config.partnerApiBaseUrl}/${id}`;
-    return this.http.get<IPartner>(url);
+    return this.http.get<Partner>(url);
   }
 
-  update(id: number, partner: IPartner): Observable<IPartner> {
+  update(id: number, partner: Partner): Observable<Partner> {
     const url = `${this.config.partnerApiBaseUrl}/${id}`;
-    return this.http.put<IPartner>(url, partner);
+    return this.http.put<Partner>(url, partner);
   }
 
-  create(id: number, partner: IPartner): Observable<IPartner> {
+  create(id: number, partner: Partner): Observable<Partner> {
     const url = `${this.config.partnerApiBaseUrl}/${id}`;
-    return this.http.post<IPartner>(url, partner);
+    return this.http.post<Partner>(url, partner);
   }
 
 
-  delete(id: Number): Observable<IPartner> {
+  delete(id: Number): Observable<Partner> {
     const url = `${this.config.partnerApiBaseUrl}/${id}`;
-    return this.http.delete<IPartner>(url);
+    return this.http.delete<Partner>(url);
   }
 }

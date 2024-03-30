@@ -1,10 +1,14 @@
-export interface IPartner {
+import { getPlatform } from "@angular/core";
+
+export class Partner {
   id: number;
   name: string;
   description: string;
-  clients: number[];
-  projects: number[];
-  createdAt: Date;
+  clients: [];
+  projects: [];
+  createdAt: string;
+  urlDoc: string;
+  repositoryGit: string;
 
 }
 
