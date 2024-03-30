@@ -33,7 +33,7 @@ export const Login = () => {
             localStorage.setItem('userEmail', email);
         }
 
-        window.location.assign('http://localhost:4200/');
+        window.location.assign('http://localhost:4401/');
     }
 
     useEffect(() => {
